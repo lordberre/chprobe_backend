@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <span style="color: white;">
+<!--    <h1>Probe configuration</h1> --!>
+    <form action="" method="post" novalidate>
+        {{ form.hidden_tag() }}
+<!--        <p>
+            {{ form.name.label }}<br>
+            {{ form.name(size=20) }}<br>
+            {% for error in form.description.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p> --!>
+        <p> 
+            {{ form.location.label }}<br>
+            {{ form.location(size=30) }}<br>
+            {% for error in form.location.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.description.label }}<br>
+            {{ form.description(size=20000,cols="40",rows="1") }}<br>
+            {% for error in form.description.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.eventlog.label }}<br>
+            {{ form.eventlog(size=20000,cols="100",rows="20") }}<br>
+            {% for error in form.eventlog.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>{{ form.refresh() }}</p>
+        <p>{{ form.submit() }}</p>
+    </form>
+    </span>
+{% endblock %}
